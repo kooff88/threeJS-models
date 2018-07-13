@@ -1,0 +1,196 @@
+/* Reset */
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd,figure,menu,input,fieldset,textarea,button,select,th,td,div,span,header,nav,footer{margin:0;padding:0;-webkit-text-size-adjust:none;}
+h1,h2,h3,h4,h5,h6,b,strong{font-size:100%;font-weight:normal;}
+li{list-style:none;}
+em,i{font-style:normal;}
+a,a:visited{text-decoration:none;border:none;color: #333; display: block}
+fieldset,img,input{border:none;}
+input,textarea{resize:none;outline:none;-webkit-appearance:none;}
+html {
+    width: 100%;
+    height: 100%;
+}
+body{
+    font-size:14px;
+    height: 100%;
+    color: #333;
+    font-family:
+        /* 西文 */
+        "-apple-system", "BlinkMacSystemFont",
+        "Segoe UI", "Roboto", "Ubuntu",
+        "Helvetica Neue" , "Helvetica", "Arial",
+        /* 中文 */
+        "PingFang SC", "Hiragino Sans GB",
+        "Microsoft YaHei UI", "Microsoft YaHei", "Source Han Sans CN",
+        "sans-serif";
+    line-height:1.6;word-wrap:break-word;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-touch-callout:none;
+    background: #fff;
+    /* -webkit-user-select:none;*/}
+
+/* -------------------- global -------------------- */
+    .clear{zoom:1;}
+    .clear:before,
+    .clear:after{content:"";display:block;}
+    .clear:after{clear:both;}
+    .none{display:none!important;}
+    .fl {float: left}
+    .fr {float: right}
+    .bottom_border {
+        text-indent: -9999em;
+        width: 100%;
+        height: 1px;
+        transform: scale(.5), translateX(-50%);
+        background-color: #eaeaea;
+    }
+    .fullImg {
+        display: block;
+    }
+
+@A : 75; 
+i, em {
+    font-style: normal;
+}
+
+.w (@V){
+    width: @V / @A * 1rem;
+}
+.h (@V){
+    height: @V / @A * 1rem;
+}
+.lh (@V){
+    line-height: @V / @A * 1rem;
+}
+.fs (@V){
+    font-size: @V / @A * 1rem;
+}
+
+/*   圆角边框   */
+.border-radius (@V) {
+    border-radius: @V / @A * 1rem;
+}
+
+.flex {
+    display: flex;
+    display: -webkit-box; 
+    display: -webkit-flex; 
+    align-items: center;
+}
+.flex-cr {
+    justify-content: center;
+    align-items: center;
+}
+.flex-sb {
+    justify-content: space-between;
+    -webkit-box-pack:space-between;
+}
+.flex-sa {
+    justify-content: space-around;
+    -webkit-box-pack: space-around;
+}
+
+/*   边框   */
+.border-w (@V) {
+    border-top-width: @V / @A * 1rem;
+    border-right-width: @V / @A * 1rem;
+    border-bottom-width: @V / @A * 1rem;
+    border-left-width: @V / @A * 1rem;
+}
+//padding部分
+.pt (@V){
+    padding-top: @V / @A * 1rem;
+}
+.pr (@V){
+    padding-right: @V / @A * 1rem;
+}
+.pb (@V){
+    padding-bottom: @V / @A * 1rem;
+}
+.pl (@V){
+    padding-left: @V / @A * 1rem;
+}
+.padding (@t, @r, @b, @l){
+    padding-top: @t / @A * 1rem;
+    padding-right: @r / @A * 1rem;
+    padding-bottom: @b / @A * 1rem;
+    padding-left: @l / @A * 1rem;
+}
+//背景宽度和高度的设定
+.background-size (@W, @H){
+    background-size: @W / @A * 1rem @H / @A * 1rem;
+}
+
+//margin部分
+.mr (@V){
+    margin-right: @V / @A * 1rem;
+}
+.ml (@V){
+    margin-left: @V / @A * 1rem;
+}
+.mt (@V){
+    margin-top: @V / @A * 1rem;
+}
+.mb (@V){
+    margin-bottom: @V / @A * 1rem;
+}
+.margin (@t, @r, @b, @l){
+    margin-top: @t / @A * 1rem;
+    margin-right: @r / @A * 1rem;
+    margin-bottom: @b / @A * 1rem;
+    margin-left: @l / @A * 1rem;
+}
+
+//定位后的方位部分
+.bottom (@V){
+    bottom: @V / @A * 1rem;
+}
+.top (@V){
+    top: @V / @A * 1rem;
+}
+.left (@V){
+    left: @V / @A * 1rem;
+}
+.right (@V){
+    right: @V / @A * 1rem;
+}
+
+//浮动部分
+.fl {
+    float: left;
+    display: block;
+}
+.fr {
+    float: right;
+    display: block;
+}
+.clear:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.content_box {
+    .pl(15);
+    .pr(15);
+    background-color: #fff;
+}
+
+main {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    background-color: #eee;
+}
+
+
+//无数据页面
+.no_data {
+    font-size: 16px;
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}   

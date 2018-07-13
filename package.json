@@ -1,0 +1,48 @@
+{
+  "name": "maonengH5",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "webpack-dev-server --inline --public --hot --progress --devtool eval --history-api-fallback  --config config/webpack.dev.js --open",
+    "build": "rm -rf dist && webpack --config config/webpack.prod.js --progress --color"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-import": "^1.8.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "chunk-manifest-webpack-plugin": "^1.1.0",
+    "clean-webpack-plugin": "^0.1.16",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.29.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
+    "postcss-loader": "^2.0.6",
+    "regenerator-runtime": "^0.11.1",
+    "style-loader": "^0.18.2",
+    "url-loader": "^1.0.1",
+    "webpack": "^3.3.0",
+    "webpack-chunk-hash": "^0.4.0",
+    "webpack-dev-server": "^2.5.1",
+    "webpack-merge": "^4.1.3"
+  },
+  "dependencies": {
+    "antd-mobile": "^2.2.2",
+    "autoprefixer": "^8.6.5",
+    "axios": "^0.18.0",
+    "classnames": "^2.2.5",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "react-loadable": "^5.4.0",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.2",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  }
+}

@@ -13,7 +13,7 @@ const proSettings: DefaultSettings = {
   fixedHeader: false,
   fixSiderbar: true,
   colorWeak: false,
-  title: 'Ant Design Pro',
+  title: 'threeJS',
   pwa: false,
   iconfontUrl: '',
 };

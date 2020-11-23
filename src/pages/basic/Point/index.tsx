@@ -5,6 +5,7 @@ const Point: FC<{}> = () => {
   return (
     <div className={styles.container}>
       <div>point</div>
+      <div>point2</div>
     </div>
   );
 };

@@ -70,16 +70,15 @@ export default defineConfig({
           routes: [
             {
               path: '/',
-              redirect: '/dashboard/analysis',
+              redirect: '/basic/point',
             },
             {
-              path: '/dashboard',
-              name: 'dashboard',
-              icon: 'dashboard',
+              path: '/basic',
+              name: 'basic',
               routes: [
                 {
-                  path: '/',
-                  redirect: '/dashboard/analysis',
+                  path: '/basic/point',
+                  component: './basic/Point',
                 },
               ],
             },

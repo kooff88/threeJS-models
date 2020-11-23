@@ -78,7 +78,13 @@ export default defineConfig({
               routes: [
                 {
                   path: '/basic/point',
+                  name: 'point',
                   component: './basic/Point',
+                },
+                {
+                  path: '/basic/rect',
+                  name: 'rect',
+                  component: './basic/Rect',
                 },
               ],
             },

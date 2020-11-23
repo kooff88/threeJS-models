@@ -9,4 +9,5 @@ export default {
   'menu.register.result': '注册结果',
   'menu.basic': '基础',
   'menu.basic.point': '点',
+  'menu.basic.rect': '矩形',
 };

@@ -91,6 +91,11 @@ export default defineConfig({
                   name: 'coordinate',
                   component: './basic/Coordinate',
                 },
+                {
+                  path: '/basic/transform',
+                  name: 'transform',
+                  component: './basic/Transform',
+                },
               ],
             },
             {

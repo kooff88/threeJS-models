@@ -11,4 +11,5 @@ export default {
   'menu.basic.point': '点',
   'menu.basic.rect': '矩形',
   'menu.basic.coordinate': '坐标系',
+  'menu.basic.transform': '转换',
 };

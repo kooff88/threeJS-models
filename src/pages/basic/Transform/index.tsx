@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import styles from './index.less';
 
-const Coordinate: FC<{}> = () => {
+const Transform: FC<{}> = () => {
   useEffect(() => {
     showPic();
   }, []);
@@ -22,7 +22,10 @@ const Coordinate: FC<{}> = () => {
             void main(){
                 // 顶点坐标apos赋值给内置变量 gl_Position
                 // 逐顶点处理数据
-                 gl_Position = apos; 
+                //  gl_Position = apos; 
+                //  gl_Position =vec4(apos.x-0.4,apos.y,apos.z,1);
+              mat4 m4 = mat4( 1,0,0,0,   0,1,0,0,   0,0,1,0,    -0.4,0,0,1 );
+              gl_Position = m4*apos;
             }
         `;
 
@@ -41,6 +44,11 @@ const Coordinate: FC<{}> = () => {
 
     // 9个元素构建三个顶点的xyz值
     let data = new Float32Array([0, 0, 1, 0, 1, 0, 1, 0, 0]);
+
+    // 沿着x轴负半轴平移0.4， 每个顶点坐标x坐标减少0.4;
+    //  for(let  i=0; i < 9; i += 3) {
+    //    data[i] -=0.4;
+    //  }
 
     // 创建缓冲区对象
     let buffer = gl.createBuffer();
@@ -99,4 +107,4 @@ const Coordinate: FC<{}> = () => {
   );
 };
 
-export default Coordinate;
+export default Transform;

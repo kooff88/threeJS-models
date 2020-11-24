@@ -86,6 +86,11 @@ export default defineConfig({
                   name: 'rect',
                   component: './basic/Rect',
                 },
+                {
+                  path: '/basic/coordinate',
+                  name: 'coordinate',
+                  component: './basic/Coordinate',
+                },
               ],
             },
             {

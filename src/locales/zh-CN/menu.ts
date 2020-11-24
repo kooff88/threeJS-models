@@ -10,4 +10,5 @@ export default {
   'menu.basic': '基础',
   'menu.basic.point': '点',
   'menu.basic.rect': '矩形',
+  'menu.basic.coordinate': '坐标系',
 };

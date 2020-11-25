@@ -12,4 +12,5 @@ export default {
   'menu.basic.rect': '矩形',
   'menu.basic.coordinate': '坐标系',
   'menu.basic.transform': '转换',
+  'menu.basic.cubic': '立方体',
 };

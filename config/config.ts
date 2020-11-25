@@ -96,6 +96,11 @@ export default defineConfig({
                   name: 'transform',
                   component: './basic/Transform',
                 },
+                {
+                  path: '/basic/cubic',
+                  name: 'cubic',
+                  component: './basic/Cubic',
+                },
               ],
             },
             {

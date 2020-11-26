@@ -63,64 +63,122 @@ const Cubic: FC<{}> = () => {
     let aposLocation = gl?.getAttribLocation(program, 'apos');
 
     // 创建立方体的坐标
-    let data = new Float32Array([
-      // z为0.5时，xOy平面上的四个坐标
-      0.5,
-      0.5,
-      1,
-      -0.5,
-      0.5,
-      1,
-      -0.5,
-      -0.5,
-      1,
-      0.5,
-      -0.5,
-      1,
+    // let data = new Float32Array([
+    //   // z为0.5时，xOy平面上的四个坐标
+    //   0.5,
+    //   0.5,
+    //   1,
+    //   -0.5,
+    //   0.5,
+    //   1,
+    //   -0.5,
+    //   -0.5,
+    //   1,
+    //   0.5,
+    //   -0.5,
+    //   1,
 
-      //z为-0.5时，xOy平面上的四个点坐标
-      0.5,
-      0.5,
-      -1,
-      -0.5,
-      0.5,
-      -1,
-      -0.5,
-      -0.5,
-      -1,
-      0.5,
-      -0.5,
-      -1,
+    //   //z为-0.5时，xOy平面上的四个点坐标
+    //   0.5,
+    //   0.5,
+    //   -1,
+    //   -0.5,
+    //   0.5,
+    //   -1,
+    //   -0.5,
+    //   -0.5,
+    //   -1,
+    //   0.5,
+    //   -0.5,
+    //   -1,
 
-      // 上面两组坐标分别对应起来组成--对
-      0.5,
-      0.5,
-      1,
-      0.5,
-      0.5,
-      -1,
+    //   // 上面两组坐标分别对应起来组成--对
+    //   0.5,
+    //   0.5,
+    //   1,
+    //   0.5,
+    //   0.5,
+    //   -1,
 
-      -0.5,
-      0.5,
-      1,
-      -0.5,
-      0.5,
-      -1,
+    //   -0.5,
+    //   0.5,
+    //   1,
+    //   -0.5,
+    //   0.5,
+    //   -1,
 
-      -0.5,
-      -0.5,
-      1,
-      -0.5,
-      -0.5,
-      -1,
+    //   -0.5,
+    //   -0.5,
+    //   1,
+    //   -0.5,
+    //   -0.5,
+    //   -1,
 
+    //   0.5,
+    //   -0.5,
+    //   1,
+    //   0.5,
+    //   -0.5,
+    //   -1,
+    // ]);
+
+    // 8个顶点坐标
+    var data = new Float32Array([
+      0.5,
+      0.5,
+      0.5, //顶点0
+      -0.5,
+      0.5,
+      0.5, //顶点1
+      -0.5,
+      -0.5,
+      0.5, //顶点2
       0.5,
       -0.5,
-      1,
+      0.5, //顶点3
+      0.5,
+      0.5,
+      -0.5, //顶点4
+      -0.5,
+      0.5,
+      -0.5, //顶点5
+      -0.5,
+      -0.5,
+      -0.5, //顶点6
       0.5,
       -0.5,
-      -1,
+      -0.5, //顶点7
     ]);
+
+    // 顶点索引数组
+    let indexes = new Uint8Array([
+      // 前4个点
+      0,
+      1,
+      2,
+      3,
+      // 后四个点
+      4,
+      5,
+      6,
+      7,
+      // 前后对应点
+      0,
+      4,
+      1,
+      5,
+      2,
+      6,
+      3,
+      7,
+    ]);
+
+    // 创建缓冲区对象
+    let indexedBuffer = gl.createBuffer();
+    // 绑定缓冲区对象
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexedBuffer);
+    // 索引数组indexed数据传入缓冲区
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, indexes, gl.STATIC_DRAW);
 
     // 创建缓冲区对象
     let buffer = gl.createBuffer();
@@ -135,14 +193,19 @@ const Cubic: FC<{}> = () => {
     //允许数据传递
     gl.enableVertexAttribArray(aposLocation);
 
-    // LINE_LOOP模式绘制前4个点
-    gl.drawArrays(gl.LINE_LOOP, 0, 4);
+    //  //LINE_LOOP模式绘制前四个点
+    //  gl.drawArrays(gl.LINE_LOOP,0,4);
+    //  //LINE_LOOP模式从第五个点开始绘制四个点
+    //  gl.drawArrays(gl.LINE_LOOP,4,4);
+    //  //LINES模式绘制后8个点
+    //  gl.drawArrays(gl.LINES,8,8);
 
-    // LINE_LOOP模式第5个点开始绘制4个点
-    gl.drawArrays(gl.LINE_LOOP, 4, 4);
-
-    // LINES模式绘制最后8个点
-    gl.drawArrays(gl.LINES, 8, 8);
+    //LINE_LOOP模式绘制前四个点
+    gl.drawElements(gl.LINE_LOOP, 4, gl.UNSIGNED_BYTE, 0);
+    //LINE_LOOP模式从第五个点开始绘制四个点
+    gl.drawElements(gl.LINE_LOOP, 4, gl.UNSIGNED_BYTE, 4);
+    //LINES模式绘制后8个点
+    gl.drawElements(gl.LINES, 8, gl.UNSIGNED_BYTE, 8);
 
     // 初始化着色器
     function initShader(gl: any, vertexShaderSource: any, fragShaderSource: any) {

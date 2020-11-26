@@ -14,4 +14,5 @@ export default {
   'menu.basic.transform': '转换',
   'menu.basic.cubic': '立方体',
   'menu.basic.color': '颜色',
+  'menu.basic.cubicWithcolor': '立方体带颜色',
 };

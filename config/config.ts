@@ -106,6 +106,11 @@ export default defineConfig({
                   name: 'color',
                   component: './basic/Color',
                 },
+                {
+                  path: '/basic/cubicWithcolor',
+                  name: 'cubicWithcolor',
+                  component: './basic/CubicWithcolor',
+                },
               ],
             },
             {

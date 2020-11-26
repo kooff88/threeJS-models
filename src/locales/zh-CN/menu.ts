@@ -13,4 +13,5 @@ export default {
   'menu.basic.coordinate': '坐标系',
   'menu.basic.transform': '转换',
   'menu.basic.cubic': '立方体',
+  'menu.basic.color': '颜色',
 };

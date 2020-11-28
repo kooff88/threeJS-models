@@ -16,47 +16,50 @@ const Sunshine: FC<{}> = () => {
 
     // 顶点着色器源码
     let vertexShaderSource = `
-    //attribute声明vec4类型变量apos
-    attribute vec4 apos;
-    // attribute声明顶点颜色变量
-    attribute vec4 a_color;
-    //顶点法向量变量
-    attribute vec4 a_normal;
-    // uniform声明平行光颜色变量
-    uniform vec3 u_lightColor;
-    //平行光方向
-    uniform vec3 u_lightDirection;
-    //varying声明顶点颜色插值后变量
-    varying vec4 v_color;
-    void main() {
-      //设置几何体轴旋转角度为30度，并把角度值转化为弧度值
-      float radian = radians(150.0);
-      //求解旋转角度余弦值
-      float cos = cos(radian);
-      //求解旋转角度正弦值
-      float sin = sin(radian);
-      //引用上面的计算数据，创建绕x轴旋转矩阵
-      // 1      0       0    0
-      // 0   cosα   sinα   0
-      // 0  -sinα   cosα   0
-      // 0      0        0   1
-      mat4 mx = mat4(1,0,0,0,  0,cos,-sin,0,  0,sin,cos,0,  0,0,0,1);
-      //引用上面的计算数据，创建绕y轴旋转矩阵
-      // cosβ   0   sinβ    0
-      //     0   1   0        0
-      //-sinβ   0   cosβ    0
-      //     0   0   0        1
-      mat4 my = mat4(cos,0,-sin,0,  0,1,0,0,  sin,0,cos,0,  0,0,0,1);
-      //两个旋转矩阵、顶点齐次坐标连乘
-      gl_Position = mx*my*apos;
-      // 顶点法向量进行矩阵变换，然后归一化, normalize()把向量模长转为单位1
-      vec3 normal = normalize((mx*my*a_normal).xyz);
-      // 计算平行光方向向量和顶点法向量的点积, dot()计算两个向量之间夹角余弦值。
-      float dot = max(dot(u_lightDirection, normal), 0.0);
-      // 计算反射后的颜色
-      vec3 reflectedLight = u_lightColor * a_color.rgb * dot;
-      //颜色插值计算
-      v_color = vec4(reflectedLight, a_color.a);
+        // precision highp float;
+        //attribute声明vec4类型变量apos
+        attribute vec4 apos;
+        // attribute声明顶点颜色变量
+        attribute vec4 a_color;
+        //顶点法向量变量
+        attribute vec4 a_normal;
+        // uniform声明平行光颜色变量
+        uniform vec3 u_lightColor;
+        // uniform声明平行光颜色变量
+        uniform vec3 u_lightPosition;
+        //varying声明顶点颜色插值后变量
+        varying vec4 v_color;
+        void main() {
+          //设置几何体轴旋转角度为30度，并把角度值转化为弧度值
+          float radian = radians(45.0);
+          //求解旋转角度余弦值
+          float cos = cos(radian);
+          //求解旋转角度正弦值
+          float sin = sin(radian);
+          //引用上面的计算数据，创建绕x轴旋转矩阵
+          // 1      0       0    0
+          // 0   cosα   sinα   0
+          // 0  -sinα   cosα   0
+          // 0      0        0   1
+          mat4 mx = mat4(1,0,0,0,  0,cos,-sin,0,  0,sin,cos,0,  0,0,0,1);
+          //引用上面的计算数据，创建绕y轴旋转矩阵
+          // cosβ   0   sinβ    0
+          //     0   1   0        0
+          //-sinβ   0   cosβ    0
+          //     0   0   0        1
+          mat4 my = mat4(cos,0,-sin,0,  0,1,0,0,  sin,0,cos,0,  0,0,0,1);
+          //两个旋转矩阵、顶点齐次坐标连乘
+          gl_Position = mx*my*apos;
+          // 顶点法向量进行矩阵变换，然后归一化
+          vec3 normal = normalize((mx*my*a_normal).xyz);
+          // 计算点光源照射顶点的方向并归一化
+          vec3 lightDirection = normalize(vec3(gl_Position) - u_lightPosition);
+          // 计算平行光方向向量和顶点法向量的点积
+          float dot = max(dot(lightDirection, normal), 0.0);
+          // 计算反射后的颜色
+          vec3 reflectedLight = u_lightColor * a_color.rgb * dot;
+          //颜色插值计算
+          v_color = vec4(reflectedLight, a_color.a);
         }
       `;
 
@@ -82,7 +85,7 @@ const Sunshine: FC<{}> = () => {
     let a_color = gl?.getAttribLocation(program, 'a_color');
     let a_normal = gl?.getAttribLocation(program, 'a_normal');
     let u_lightColor = gl?.getUniformLocation(program, 'u_lightColor');
-    let u_lightDirection = gl?.getUniformLocation(program, 'u_lightDirection');
+    let u_lightPosition = gl?.getUniformLocation(program, 'u_lightPosition');
 
     /***
      *  给平行光传入颜色和方向数据, RGB(1,1,1) 单位向量(x, y, z)
@@ -90,11 +93,14 @@ const Sunshine: FC<{}> = () => {
 
     gl.uniform3f(u_lightColor, 1.0, 1.0, 1.0);
     // 保证向量(x,y,z)的长度为1，即单位向量
-    let x = 1 / Math.sqrt(15);
-    let y = 2 / Math.sqrt(15);
-    let z = 3 / Math.sqrt(15);
+    // let x = 1 / Math.sqrt(15);
+    // let y = 2 / Math.sqrt(15);
+    // let z = 3 / Math.sqrt(15);
 
-    gl.uniform3f(u_lightDirection, x, y, -z);
+    // gl.uniform3f(u_lightPosition, x, y, -z);
+
+    //点光源位置
+    gl.uniform3f(u_lightPosition, 2.0, 3.0, 4.0);
 
     /**
      创建顶点位置数据数组data,Javascript中小数点前面的0可以省略

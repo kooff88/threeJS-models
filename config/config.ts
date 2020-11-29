@@ -123,6 +123,11 @@ export default defineConfig({
                   name: 'rotate',
                   component: './basic/Rotate',
                 },
+                {
+                  path: '/basic/moreGeometry',
+                  name: 'moreGeometry',
+                  component: './basic/MoreGeometry',
+                },
               ],
             },
             {

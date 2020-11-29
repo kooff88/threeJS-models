@@ -17,4 +17,5 @@ export default {
   'menu.basic.cubicWithcolor': '立方体带颜色',
   'menu.basic.sunshine': '带光照',
   'menu.basic.rotate': '旋转',
+  'menu.basic.moreGeometry': '多几个体',
 };

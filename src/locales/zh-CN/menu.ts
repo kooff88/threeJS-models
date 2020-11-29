@@ -16,4 +16,5 @@ export default {
   'menu.basic.color': '颜色',
   'menu.basic.cubicWithcolor': '立方体带颜色',
   'menu.basic.sunshine': '带光照',
+  'menu.basic.rotate': '旋转',
 };

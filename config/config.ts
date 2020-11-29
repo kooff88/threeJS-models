@@ -117,6 +117,12 @@ export default defineConfig({
                   name: 'sunshine',
                   component: './basic/Sunshine',
                 },
+
+                {
+                  path: '/basic/rotate',
+                  name: 'rotate',
+                  component: './basic/Rotate',
+                },
               ],
             },
             {

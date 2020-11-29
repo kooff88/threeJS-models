@@ -128,6 +128,11 @@ export default defineConfig({
                   name: 'moreGeometry',
                   component: './basic/MoreGeometry',
                 },
+                {
+                  path: '/basic/moreGeometryII',
+                  name: 'moreGeometryII',
+                  component: './basic/MoreGeometryII',
+                },
               ],
             },
             {

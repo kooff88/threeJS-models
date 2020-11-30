@@ -19,4 +19,5 @@ export default {
   'menu.basic.rotate': '旋转',
   'menu.basic.moreGeometry': '多几个体',
   'menu.basic.moreGeometryII': '多几个体II',
+  'menu.basic.texture': '纹理',
 };

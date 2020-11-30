@@ -133,6 +133,11 @@ export default defineConfig({
                   name: 'moreGeometryII',
                   component: './basic/MoreGeometryII',
                 },
+                {
+                  path: '/basic/texture',
+                  name: 'texture',
+                  component: './basic/Texture',
+                },
               ],
             },
             {

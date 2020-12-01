@@ -138,6 +138,11 @@ export default defineConfig({
                   name: 'texture',
                   component: './basic/Texture',
                 },
+                {
+                  path: '/basic/grayLevel',
+                  name: 'grayLevel',
+                  component: './basic/GrayLevel',
+                },
               ],
             },
             {

@@ -20,4 +20,5 @@ export default {
   'menu.basic.moreGeometry': '多几个体',
   'menu.basic.moreGeometryII': '多几个体II',
   'menu.basic.texture': '纹理',
+  'menu.basic.grayLevel': '灰度',
 };

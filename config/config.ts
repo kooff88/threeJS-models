@@ -143,6 +143,11 @@ export default defineConfig({
                   name: 'grayLevel',
                   component: './basic/GrayLevel',
                 },
+                {
+                  path: '/basic/chartlet',
+                  name: 'chartlet',
+                  component: './basic/Chartlet',
+                },
               ],
             },
             {

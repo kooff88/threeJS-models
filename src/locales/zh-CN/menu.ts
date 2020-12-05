@@ -28,4 +28,5 @@ export default {
   'menu.threejs': 'threeJS基础',
   'menu.threejs.firstdemo': '一个demo',
   'menu.threejs.rotate': '旋转动画',
+  'menu.threejs.mouse': '鼠标操作',
 };

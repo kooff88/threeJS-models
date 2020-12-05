@@ -174,6 +174,11 @@ export default defineConfig({
                   name: 'rotate',
                   component: './threejs/Rotate',
                 },
+                {
+                  path: '/threejs/mouse',
+                  name: 'mouse',
+                  component: './threejs/Mouse',
+                },
               ],
             },
             {

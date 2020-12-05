@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import styles from './index.less';
 
 console.log('THREE', THREE);
-const FirstDemo: FC<{}> = () => {
+const Rotate: FC<{}> = () => {
   useEffect(() => {
     showPic();
   }, []);
@@ -20,7 +20,7 @@ const FirstDemo: FC<{}> = () => {
     //let geometry = new THREE.SphereGeometry(60,40,40) // 球体几何体
     let geometry = new THREE.BoxGeometry(200, 200, 200);
     let material = new THREE.MeshLambertMaterial({
-      color: 0x00ff00,
+      color: 0x0000ff,
     }); // 材质material
 
     // 创建网格模型对象mesh
@@ -32,10 +32,10 @@ const FirstDemo: FC<{}> = () => {
      */
     // 点光源
     let point = new THREE.PointLight(0xffffff);
-    point.position.set(400, 200, 200); // 点光源位置
+    point.position.set(100, 800, 100); // 点光源位置
     scene.add(point); // 点光源添加到场景中
     // 环境光
-    let ambient = new THREE.AmbientLight(0x008000);
+    let ambient = new THREE.AmbientLight(0x444444);
     scene.add(ambient);
 
     /**
@@ -47,7 +47,7 @@ const FirstDemo: FC<{}> = () => {
     let s = 300; // 三位场景中范围控制的系数，系数越大 显示范围越大。
     // 创建相机对象
     let camera = new THREE.OrthographicCamera(-s * k, s * k, s, -s, 1, 1000);
-    camera.position.set(300, 200, 300); // 相机位置
+    camera.position.set(200, 200, 200); // 相机位置
     camera.lookAt(scene.position); // 设置相机方向，指向场景对象
 
     /**
@@ -58,16 +58,45 @@ const FirstDemo: FC<{}> = () => {
     renderer.setClearColor(0xb9d3ff, 1); // 设置背景颜色
 
     // 元素中插入canvas对象
-    document.getElementById('firstDemo')?.appendChild(renderer.domElement);
-    // 执行渲染操作,指定场景，相机作为参数
-    renderer.render(scene, camera);
+    document.getElementById('rotate')?.appendChild(renderer.domElement);
+
+    // function render(){
+    //   // 执行渲染操作,指定场景，相机作为参数
+    //   renderer.render(scene, camera);
+    //   mesh.rotateY(0.01); // 每次绕y轴旋转0.01弧度
+    //   requestAnimationFrame(render);
+    // }
+
+    // 渲染函数
+    let T0 = new Date(); // 上次时间
+    let n = 0;
+    function render() {
+      // 进行循环计算， 占用cpu资源，延迟计算
+      // 进行循环计算，占用CPU计算资源，延迟时间
+      // for (var i = 0; i < 10000; i++) {
+      //   for (var j = 0; j < 1000; j++) {
+      //     n+=1
+      //   }
+      // }
+
+      let T1 = new Date(); //本次时间
+      let t = T1 - T0; // 时间差
+      T0 = T1; // 把本次时间给上次
+      renderer.render(scene, camera);
+      mesh.rotateY(0.01); // 每次绕y轴旋转0.01弧度
+      requestAnimationFrame(render);
+    }
+
+    render();
+
+    // setInterval(() =>render(), 20)
   };
 
   return (
     <div className={styles.container}>
-      <div id="firstDemo" />
+      <div id="rotate" />
     </div>
   );
 };
 
-export default FirstDemo;
+export default Rotate;

@@ -169,6 +169,11 @@ export default defineConfig({
                   name: 'firstdemo',
                   component: './threejs/FirstDemo',
                 },
+                {
+                  path: '/threejs/rotate',
+                  name: 'rotate',
+                  component: './threejs/Rotate',
+                },
               ],
             },
             {

@@ -24,4 +24,7 @@ export default {
   'menu.basic.chartlet': '贴图',
   'menu.basic.opacity': 'alpha融合',
   'menu.basic.opacitytest': 'alpha融合与深度测试',
+
+  'menu.threejs': 'threeJS基础',
+  'menu.threejs.firstdemo': '一个demo',
 };

@@ -161,6 +161,17 @@ export default defineConfig({
               ],
             },
             {
+              path: '/threejs',
+              name: 'threejs',
+              routes: [
+                {
+                  path: '/threejs/firstdemo',
+                  name: 'firstdemo',
+                  component: './threejs/FirstDemo',
+                },
+              ],
+            },
+            {
               component: '404',
             },
           ],

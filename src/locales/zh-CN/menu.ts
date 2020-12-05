@@ -22,5 +22,6 @@ export default {
   'menu.basic.texture': '纹理',
   'menu.basic.grayLevel': '灰度',
   'menu.basic.chartlet': '贴图',
-  'menu.basic.opacity': '半透明三角',
+  'menu.basic.opacity': 'alpha融合',
+  'menu.basic.opacitytest': 'alpha融合与深度测试',
 };

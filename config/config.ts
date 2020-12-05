@@ -153,6 +153,11 @@ export default defineConfig({
                   name: 'opacity',
                   component: './basic/Opacity',
                 },
+                {
+                  path: '/basic/opacitytest',
+                  name: 'opacitytest',
+                  component: './basic/Opacitytest',
+                },
               ],
             },
             {

@@ -22,4 +22,5 @@ export default {
   'menu.basic.texture': '纹理',
   'menu.basic.grayLevel': '灰度',
   'menu.basic.chartlet': '贴图',
+  'menu.basic.opacity': '半透明三角',
 };

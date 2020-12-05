@@ -148,6 +148,11 @@ export default defineConfig({
                   name: 'chartlet',
                   component: './basic/Chartlet',
                 },
+                {
+                  path: '/basic/opacity',
+                  name: 'opacity',
+                  component: './basic/Opacity',
+                },
               ],
             },
             {

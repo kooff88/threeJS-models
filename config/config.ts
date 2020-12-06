@@ -199,6 +199,11 @@ export default defineConfig({
                   name: 'pointPosition',
                   component: './threejs/PointPosition',
                 },
+                {
+                  path: '/threejs/interpolation',
+                  name: 'interpolation',
+                  component: './threejs/Interpolation',
+                },
               ],
             },
             {

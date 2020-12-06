@@ -184,6 +184,11 @@ export default defineConfig({
                   name: 'moreGeo',
                   component: './threejs/MoreGeo',
                 },
+                {
+                  path: '/threejs/material',
+                  name: 'material',
+                  component: './threejs/Material',
+                },
               ],
             },
             {

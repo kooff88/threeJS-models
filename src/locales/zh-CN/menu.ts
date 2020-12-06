@@ -30,4 +30,5 @@ export default {
   'menu.threejs.rotate': '旋转动画',
   'menu.threejs.mouse': '鼠标操作',
   'menu.threejs.moreGeo': '多个几何体',
+  'menu.threejs.material': '材质',
 };

@@ -224,6 +224,11 @@ export default defineConfig({
                   name: 'face3',
                   component: './threejs/Face3',
                 },
+                {
+                  path: '/threejs/accessData',
+                  name: 'accessData',
+                  component: './threejs/AccessData',
+                },
               ],
             },
             {

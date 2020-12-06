@@ -38,4 +38,5 @@ export default {
   'menu.threejs.indexVertor': '索引绘制',
   'menu.threejs.useVertor': '顶点颜色向量',
   'menu.threejs.face3': 'Face3对象',
+  'menu.threejs.accessData': '访问数据',
 };

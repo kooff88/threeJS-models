@@ -234,6 +234,11 @@ export default defineConfig({
                   name: 'transform',
                   component: './threejs/Transform',
                 },
+                {
+                  path: '/threejs/materialAll',
+                  name: 'materialAll',
+                  component: './threejs/MaterialAll',
+                },
               ],
             },
             {

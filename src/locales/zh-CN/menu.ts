@@ -41,4 +41,6 @@ export default {
   'menu.threejs.face3': 'Face3对象',
   'menu.threejs.accessData': '访问数据',
   'menu.threejs.transform': '变换',
+
+  'menu.threejs.materialAll': '材质综述',
 };

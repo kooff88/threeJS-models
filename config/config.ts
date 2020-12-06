@@ -204,6 +204,11 @@ export default defineConfig({
                   name: 'interpolation',
                   component: './threejs/Interpolation',
                 },
+                {
+                  path: '/threejs/normalVertor',
+                  name: 'normalVertor',
+                  component: './threejs/NormalVertor',
+                },
               ],
             },
             {

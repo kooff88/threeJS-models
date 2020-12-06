@@ -34,4 +34,5 @@ export default {
   'menu.threejs.lightPoint': '点光源',
   'menu.threejs.pointPosition': '顶点位置',
   'menu.threejs.interpolation': '插值计算',
+  'menu.threejs.normalVertor': '法向量',
 };

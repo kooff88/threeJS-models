@@ -32,6 +32,7 @@ export default {
   'menu.threejs.moreGeo': '多个几何体',
   'menu.threejs.material': '材质',
   'menu.threejs.lightPoint': '点光源',
+
   'menu.threejs.pointPosition': '顶点位置',
   'menu.threejs.interpolation': '插值计算',
   'menu.threejs.normalVertor': '法向量',
@@ -39,4 +40,5 @@ export default {
   'menu.threejs.useVertor': '顶点颜色向量',
   'menu.threejs.face3': 'Face3对象',
   'menu.threejs.accessData': '访问数据',
+  'menu.threejs.transform': '变换',
 };

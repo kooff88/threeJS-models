@@ -229,6 +229,11 @@ export default defineConfig({
                   name: 'accessData',
                   component: './threejs/AccessData',
                 },
+                {
+                  path: '/threejs/transform',
+                  name: 'transform',
+                  component: './threejs/Transform',
+                },
               ],
             },
             {

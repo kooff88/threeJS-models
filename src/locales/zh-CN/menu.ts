@@ -31,4 +31,5 @@ export default {
   'menu.threejs.mouse': '鼠标操作',
   'menu.threejs.moreGeo': '多个几何体',
   'menu.threejs.material': '材质',
+  'menu.threejs.lightPoint': '点光源',
 };

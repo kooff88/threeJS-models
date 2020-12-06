@@ -189,6 +189,11 @@ export default defineConfig({
                   name: 'material',
                   component: './threejs/Material',
                 },
+                {
+                  path: '/threejs/lightPoint',
+                  name: 'lightPoint',
+                  component: './threejs/LightPoint',
+                },
               ],
             },
             {

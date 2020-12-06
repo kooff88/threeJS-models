@@ -214,6 +214,11 @@ export default defineConfig({
                   name: 'indexVertor',
                   component: './threejs/IndexVertor',
                 },
+                {
+                  path: '/threejs/useVertor',
+                  name: 'useVertor',
+                  component: './threejs/UseVertor',
+                },
               ],
             },
             {

@@ -36,4 +36,5 @@ export default {
   'menu.threejs.interpolation': '插值计算',
   'menu.threejs.normalVertor': '法向量',
   'menu.threejs.indexVertor': '索引绘制',
+  'menu.threejs.useVertor': '顶点颜色向量',
 };

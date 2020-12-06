@@ -32,4 +32,5 @@ export default {
   'menu.threejs.moreGeo': '多个几何体',
   'menu.threejs.material': '材质',
   'menu.threejs.lightPoint': '点光源',
+  'menu.threejs.pointPosition': '顶点位置',
 };

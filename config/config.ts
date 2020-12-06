@@ -194,6 +194,11 @@ export default defineConfig({
                   name: 'lightPoint',
                   component: './threejs/LightPoint',
                 },
+                {
+                  path: '/threejs/pointPosition',
+                  name: 'pointPosition',
+                  component: './threejs/PointPosition',
+                },
               ],
             },
             {

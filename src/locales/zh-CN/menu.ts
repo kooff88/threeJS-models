@@ -37,4 +37,5 @@ export default {
   'menu.threejs.normalVertor': '法向量',
   'menu.threejs.indexVertor': '索引绘制',
   'menu.threejs.useVertor': '顶点颜色向量',
+  'menu.threejs.face3': 'Face3对象',
 };

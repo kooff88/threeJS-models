@@ -219,6 +219,11 @@ export default defineConfig({
                   name: 'useVertor',
                   component: './threejs/UseVertor',
                 },
+                {
+                  path: '/threejs/face3',
+                  name: 'face3',
+                  component: './threejs/Face3',
+                },
               ],
             },
             {

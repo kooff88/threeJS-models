@@ -209,6 +209,11 @@ export default defineConfig({
                   name: 'normalVertor',
                   component: './threejs/NormalVertor',
                 },
+                {
+                  path: '/threejs/indexVertor',
+                  name: 'indexVertor',
+                  component: './threejs/IndexVertor',
+                },
               ],
             },
             {

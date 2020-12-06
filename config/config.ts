@@ -179,6 +179,11 @@ export default defineConfig({
                   name: 'mouse',
                   component: './threejs/Mouse',
                 },
+                {
+                  path: '/threejs/moreGeo',
+                  name: 'moreGeo',
+                  component: './threejs/MoreGeo',
+                },
               ],
             },
             {

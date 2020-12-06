@@ -59,6 +59,7 @@
     "antd": "^4.8.0",
     "bizcharts": "^3.5.3-beta.0",
     "bizcharts-plugin-slider": "^2.1.1-beta.1",
+    "camera-controls": "^1.25.2",
     "classnames": "^2.2.6",
     "dva": "^2.4.0",
     "gg-editor": "^2.0.2",
@@ -79,7 +80,7 @@
     "react-helmet-async": "^1.0.4",
     "react-router": "^4.3.1",
     "three": "^0.123.0",
-    "three-orbitcontrols": "^2.110.3",
+    "three-orbit-controls": "^82.1.0",
     "umi": "^3.2.14",
     "umi-request": "^1.0.8",
     "use-merge-value": "^1.0.1"

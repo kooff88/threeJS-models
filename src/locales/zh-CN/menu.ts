@@ -29,4 +29,5 @@ export default {
   'menu.threejs.firstdemo': '一个demo',
   'menu.threejs.rotate': '旋转动画',
   'menu.threejs.mouse': '鼠标操作',
+  'menu.threejs.moreGeo': '多个几何体',
 };

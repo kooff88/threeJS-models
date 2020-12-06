@@ -19,7 +19,6 @@ const MoreGeo: FC<{}> = () => {
      * 创建网格模型
      **/
     // 创建立方体几何对象geometry
-    // let geometry = new THREE.BoxGeometry(200, 200, 200);
     //let geometry = new THREE.SphereGeometry(60,40,40) // 球体几何体
     //圆柱体: 顶部，底部直径50,50  高100 圆周分段数
     // let geometry = new THREE.CylinderGeometry(50,50,100,25);
@@ -28,15 +27,37 @@ const MoreGeo: FC<{}> = () => {
     // 正十二面体
     // var geometry = new THREE.DodecahedronGeometry(50);
     // 正二十面体
-    var geometry = new THREE.IcosahedronGeometry(50);
+    // var geometry = new THREE.IcosahedronGeometry(50);
 
-    let material = new THREE.MeshLambertMaterial({
-      color: 0x00ff00,
+    let geometry1 = new THREE.BoxGeometry(100, 100, 100);
+    let material1 = new THREE.MeshLambertMaterial({
+      color: 0x0000ff,
     }); // 材质material
 
     // 创建网格模型对象mesh
-    let mesh = new THREE.Mesh(geometry, material);
-    scene.add(mesh); // 网格模型添加到场景中
+    let mesh1 = new THREE.Mesh(geometry1, material1);
+    scene.add(mesh1); // 网格模型添加到场景中
+
+    let geometry2 = new THREE.SphereGeometry(60, 40, 40);
+    let material2 = new THREE.MeshLambertMaterial({
+      color: 0xff00ff,
+    }); // 材质material
+    let mesh2 = new THREE.Mesh(geometry2, material2);
+    mesh2.translateY(120); //沿着y轴移动120
+    scene.add(mesh2);
+
+    // 圆柱
+    let geometry3 = new THREE.CylinderGeometry(50, 50, 100, 25);
+    let material3 = new THREE.MeshLambertMaterial({
+      color: 0xffff00,
+    });
+    let mesh3 = new THREE.Mesh(geometry3, material3);
+    mesh3.position.set(120, 0, 0); //设 mesh3 模型的坐标是 120,0,0
+    scene.add(mesh3);
+
+    // 辅助坐标系
+    let axisHelper = new THREE.AxisHelper(250);
+    scene.add(axisHelper);
 
     /**
      * 光源设置
@@ -66,7 +87,7 @@ const MoreGeo: FC<{}> = () => {
      */
     let renderer = new THREE.WebGLRenderer();
     renderer.setSize(width, height); // 蛇追渲染区域尺寸
-    renderer.setClearColor(0xb9d3ff, 1); // 设置背景颜色
+    renderer.setClearColor(0x666666, 1); // 设置背景颜色
 
     // 元素中插入canvas对象
     document.getElementById('moreGeo')?.appendChild(renderer.domElement);

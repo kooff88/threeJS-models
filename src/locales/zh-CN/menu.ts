@@ -43,4 +43,6 @@ export default {
   'menu.threejs.transform': '变换',
 
   'menu.threejs.materialAll': '材质综述',
+
+  'menu.threejs.pointAndOn': '点线面模型',
 };

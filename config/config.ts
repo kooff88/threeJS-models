@@ -239,6 +239,11 @@ export default defineConfig({
                   name: 'materialAll',
                   component: './threejs/MaterialAll',
                 },
+                {
+                  path: '/threejs/pointAndOn',
+                  name: 'pointAndOn',
+                  component: './threejs/PointAndOn',
+                },
               ],
             },
             {

@@ -45,4 +45,6 @@ export default {
   'menu.threejs.materialAll': '材质综述',
 
   'menu.threejs.pointAndOn': '点线面模型',
+
+  'menu.threejs.light': '光照对象',
 };

@@ -244,6 +244,11 @@ export default defineConfig({
                   name: 'pointAndOn',
                   component: './threejs/PointAndOn',
                 },
+                {
+                  path: '/threejs/light',
+                  name: 'light',
+                  component: './threejs/Light',
+                },
               ],
             },
             {

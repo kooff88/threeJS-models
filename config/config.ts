@@ -249,6 +249,11 @@ export default defineConfig({
                   name: 'light',
                   component: './threejs/Light',
                 },
+                {
+                  path: '/threejs/shadow',
+                  name: 'shadow',
+                  component: './threejs/Shadow',
+                },
               ],
             },
             {

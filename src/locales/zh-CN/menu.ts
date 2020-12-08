@@ -47,4 +47,5 @@ export default {
   'menu.threejs.pointAndOn': '点线面模型',
 
   'menu.threejs.light': '光照对象',
+  'menu.threejs.shadow': '光照阴影',
 };

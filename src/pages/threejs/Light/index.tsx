@@ -51,10 +51,10 @@ const Light: FC<{}> = () => {
     // scene.add(spotLight.target);
 
     // 创建一个用来设置target的Object3d
-    let targetObj = new THREE.Object3D();
-    targetObj.translateX(150);
-    scene.add(targetObj);
-    spotLight.target = targetObj;
+    // let targetObj = new THREE.Object3D()
+    // targetObj.translateX(150);
+    // scene.add(targetObj);
+    // spotLight.target = targetObj;
 
     scene.add(spotLight);
 
@@ -66,6 +66,10 @@ const Light: FC<{}> = () => {
     // // 方向光指向对象mesh2,可不设置，默认0,0,0
     // directionLight.target = mesh2;
     // scene.add(directionLight)
+
+    //环境光   环境光颜色RGB成分分别和物体材质颜色RGB成分分别相乘
+    var ambient = new THREE.AmbientLight(0x444444);
+    scene.add(ambient); //环境光对象添加到scene场景中
 
     /**
      * 相机设置

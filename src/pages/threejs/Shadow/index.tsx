@@ -43,6 +43,7 @@ const Shadow: FC<{}> = () => {
 
     //环境光   环境光颜色RGB成分分别和物体材质颜色RGB成分分别相乘
     var ambient = new THREE.AmbientLight(0x444444);
+    ambient.intensity = 1.2;
     scene.add(ambient); //环境光对象添加到scene场景中
 
     //  聚光灯光源
